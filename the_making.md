@@ -6,3 +6,23 @@
 - [ ] **Extnesion**:Make an extension out of it.
 ---
 
+
+## NOTES
+#### Dev tools
+- `clear()` is used to clear the console.
+
+#### JSON
+- `JSON`- Javascript Object Notation.
+- It gives meta data about the web application.
+
+#### defer 
+- `defer` in script is used in `<script>` tag to downalod the entire *js content* while *parsing html* and to exectute it only after **HTML is fully parsed**
+- so pages load without delay.
+--- 
+
+### BASIC EXTESNION
+- Go to `chrome://extensions/`
+- Enable **dev mode** on top left
+- click `load unpacked`=> then select folder you want to load.
+---
+
