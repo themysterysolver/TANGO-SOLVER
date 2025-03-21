@@ -16,6 +16,10 @@ def check_row(grid,idx):
     hash=Counter([grid[i] for i in r])
     if hash[1]>3 or hash[2]>3:
         return False
+    for i in range(4):
+        if grid[r[i]]!=0 and grid[r[i+1]]!=0 and grid[r[i+2]]!=0:
+            if grid[r[i]]==grid[r[i+1]]==grid[r[i+2]]:
+                return False
     return True
 
 
@@ -24,6 +28,10 @@ def check_col(grid,idx):
     hash=Counter([grid[i] for i in c])
     if hash[1]>3 or hash[2]>3:
         return False
+    for i in range(4):
+        if grid[c[i]]!=0 and grid[c[i+1]]!=0 and grid[c[i+2]]!=0:
+            if grid[c[i]] == grid[c[i+1]] == grid[c[i+2]]:
+                return False
     return True
     
 
@@ -38,7 +46,7 @@ def get_col(idx):
 def solver(grid,equal,cross,idx,locked):
     global result
     if idx==36:
-        display(grid)
+        #display(grid)
         result=grid[:]
         return
     if grid[idx]==0:
@@ -60,7 +68,7 @@ def solver(grid,equal,cross,idx,locked):
                         modified_cross.append(j)
 
             if check_row(grid,idx) and check_col(grid,idx):
-                display(grid)
+                #display(grid)
                 solver(grid,equal,cross,idx+1,locked)
 
             for j in modified_equal:
@@ -72,7 +80,7 @@ def solver(grid,equal,cross,idx,locked):
             grid[idx]=0
     else:
         if check_row(grid,idx) and check_col(grid,idx):
-            display(grid)
+            #display(grid)
             solver(grid,equal,cross,idx+1,locked)
         else:
             if idx not in locked:
@@ -85,11 +93,11 @@ def solver(grid,equal,cross,idx,locked):
 if __name__=="__main__":
     '''Board setup'''
     tango=[0,0,0,0,0,0,
-            0,0,0,0,0,1,
-            0,0,0,0,1,0,
-            0,0,0,1,0,2,
-            0,0,1,0,1,0,
-            0,1,0,1,0,2]
+            0,0,0,0,0,2,
+            0,0,0,0,2,0,
+            0,0,0,2,0,1,
+            0,0,2,0,2,0,
+            0,2,0,2,0,1]
     locked=[i for i in range(36) if tango[i]!=0]
     equal={1:[2,7],6:[7,12]}
     cross={}
