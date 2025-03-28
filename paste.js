@@ -51,3 +51,8 @@ let iframe_coll=document.getElementsByClassName("game-launch-page__iframe w-full
             }
         });
     }
+    let str_num=new Map();
+    num_str.forEach((val,key)=>{
+        str_num.set(val,key);
+    });
+    console.log(str_num);

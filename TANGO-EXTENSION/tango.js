@@ -62,5 +62,10 @@ async function solveIt() {
         });
     }
     //clickIndex(1);
+    let str_num=new Map();
+    num_str.forEach((val,key)=>{
+        str_num.set(val,key);
+    });
+    console.log(str_num);
 }
 
