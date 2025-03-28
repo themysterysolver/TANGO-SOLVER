@@ -26,3 +26,15 @@
 - click `load unpacked`=> then select folder you want to load.
 ---
 
+#### queryselector()
+- can be make sued to sleect `tag`,`class`,`id` and **attribute**
+- `attribute` is given as key **value-pair**
+```
+`[data-cell-idx="${index}"]`
+```
+---
+#### template strings
+- here we sue ***`***(backtick)
+- string interpolation
+- `${}` expr evaluavtion
+
