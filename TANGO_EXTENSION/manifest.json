@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "LinkedIn Tango solver",
+    "name": "Tango solver",
     "version": "1.0",
-    "description": "Solves LinkedIn's daily TANGO game",
+    "description": "Solves LinkedIn's daily TANGO game without sigin",
     "permissions": ["scripting", "activeTab"],
     "host_permissions": ["https://www.linkedin.com/*"],
     "action": {
