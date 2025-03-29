@@ -74,5 +74,33 @@ async function solveIt() {
     //console.log("BOARD",board);
     //console.log("LOCKED",locked);
 
+    let equal=new Map();
+    let cross=new Map();
+
+    const elements=iframe.querySelectorAll(".lotka-cell, .lotka-cell-edge--right, .lotka-cell-edge--down");
+    console.log(elements);
+
+    let last_idx=null;
+    elements.forEach(el=>{
+        if(el.classList.contains("lotka-cell")){
+            last_idx=parseInt(el.getAttribute("data-cell-idx"));
+        }
+        else if(el.classList.contains("lotka-cell-edge--right") && last_idx!==null){
+            let choice=el.querySelector("svg").getAttribute("aria-label")==="Equal"?equal:cross;
+            if(!choice.has(last_idx+1)){
+                choice.set(last_idx+1,[]);
+            }
+            choice.get(last_idx+1).push(last_idx);
+        }
+        else if(el.classList.contains("lotka-cell-edge--down") && last_idx!==null){
+            let choice=el.querySelector("svg").getAttribute("aria-label")==="Equal"?equal:cross;
+            if(!choice.has(last_idx+size)){
+                choice.set(last_idx+size,[]);
+            }
+            choice.get(last_idx+size).push(last_idx);
+        }
+    });
+    console.log("EQUAL:",equal);
+    console.log("CROSS",cross);
 }
 
