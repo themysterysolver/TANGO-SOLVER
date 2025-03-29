@@ -1,12 +1,12 @@
 
 ## PLAN
 - [x] **Game logic**:To build a *working prototype* in `py`.📌📌
-- [ ] **Input**:To get `input` from the webpage. 
+- [x] **Input**:To get `input` from the webpage. 
     - [x] Get the cell 1st click and 2nd click element
-    - [ ] get the board
-    - [ ] get the cross and equal
+    - [x] get the board
+    - [x] get the cross and equal
 - [ ] **Game logic js** :a perfect backtracking algo
-- [ ] **Output**:To get the *output board* to the `linkedin/games/tango` by creating events
+- [x] **Output**:To get the *output board* to the `linkedin/games/tango` by creating events/dispatching mosue events and others
 - [ ] **Extnesion**:Make an extension out of it.
 ---
 
