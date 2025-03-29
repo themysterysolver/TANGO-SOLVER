@@ -62,10 +62,17 @@ async function solveIt() {
         });
     }
     //clickIndex(1);
+
     let str_num=new Map();
     num_str.forEach((val,key)=>{
         str_num.set(val,key);
     });
     console.log(str_num);
+    const locked=Array.from(content).map((val,idx)=>val.classList.contains("lotka-cell--locked")?idx:0).filter(idx=>idx!==0);
+    let board=Array.from(content).map((val,idx)=>val.classList.contains("lotka-cell--locked")?
+        str_num.get(val.getElementsByClassName("lotka-cell-content")[0].querySelector("svg").getAttribute("aria-label")):0);
+    //console.log("BOARD",board);
+    //console.log("LOCKED",locked);
+
 }
 
